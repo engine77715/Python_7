@@ -1,10 +1,19 @@
-number = int(input('Введите четырехзначное число:'))
-num_1 = number // 1000
-num_2 = (number % 1000) // 100
-num_3 = (number % 100) // 10
-num_4 = number % 10
+num1 = float(input("Введите первое число: "))
+operator = input("Введите оператор (+, -, *, /): ")
+num2 = float(input("Введите второе число: "))
 
-print(num_1)
-print(num_2)
-print(num_3)
-print(num_4)
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    if num2 == 0:
+        result = num1 / num2
+    else:
+        result = "Ошибка: деление на ноль"
+else:
+    result = "Ошибка: неверный оператор"
+
+print("Результат:", result)
