@@ -1,11 +1,19 @@
-lists = [
-    [12, 3, 4, 10],
-    [1],
-    [],
-    [12, 3, 4, 10, 8]
-]
+num1 = float(input("Введіть перше число: "))
+num2 = float(input("Введіть друге число: "))
+operator = input("Введіть операцію (+, -, *, /): ")
 
-for lst in lists:
-    if len(lst) > 1:
-        lst.insert(0, lst.pop())
-    print(lst)
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    if num2 != 0:
+        result = num1 / num2
+    else:
+        result = "Помилка: Ділення на нуль!"
+else:
+    result = "Невірна операція!"
+
+print("Результат:", result)
