@@ -1,22 +1,13 @@
-num1 = float(input("Введіть перше число: "))
-num2 = float(input("Введіть друге число: "))
-operator = input("Введіть операцію (+, -, *, /): ")
+number = 3847
+print(number // 10)
+print(number % 10)
 
-if operator == '+':
-    result = num1 + num2
-elif operator == '-':
-    result = num1 - num2
-elif operator == '*':
-    result = num1 * num2
-elif operator == '/':
-    if num2 != 0:
-        result = num1 / num2
-    else:
-        result = "Помилка: Ділення на нуль!"
-else:
-    result = "Невірна операція!"
+firs_number = number % 10
+number = number // 10
+second_number = number % 10
+print(second_number, firs_number)
+input_list = [1, 2, 3, 4, 5, 6]
 
-print("Результат:", result)
+result = [input_list[:len(input_list)//2 + len(input_list) % 2], input_list[len(input_list)//2 + len(input_list) % 2:]]
 
-
-
+print(result)
