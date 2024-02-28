@@ -1,0 +1,12 @@
+nums = [0, 1, 0, 12, 3]
+
+# Визначаємо кількість нулів у списку
+count_zeros = nums.count(0)
+
+# Видаляємо всі нулі зі списку
+nums = [num for num in nums if num != 0]
+
+# Додаємо необхідну кількість нулів в кінець списку
+nums += [0] * count_zeros
+
+print(nums)
