@@ -1,0 +1,9 @@
+array = [0, 1, 7, 2, 4, 8]
+
+if array:
+    sum_even = sum(array[::2])
+    result = sum_even * array[-1]
+else:
+    result = 0
+
+print(result)  # Виведе: 88
