@@ -1,2 +1,10 @@
-random_list = [1, 1, 2, 1]
-new_list = [1, 2, 2]
+import random
+
+# Генеруємо список з випадковою кількістю елементів від 3 до 10
+initial_list = random.sample(range(10), random.randint(3, 10))
+
+# Створюємо новий список із трьох елементів початкового списку: перший, третій та другий з кінця
+new_list = [initial_list[0], initial_list[2], initial_list[-2]]
+
+print("Початковий список:", initial_list)
+print("Новий список:", new_list)
