@@ -1,28 +1,27 @@
 def format_time(seconds):
-    # Знайти кількість днів, годин, хвилин та секунд
-    days, seconds = divmod(seconds, 24 * 60 * 60)
-    hours, seconds = divmod(seconds, 60 * 60)
-    minutes, seconds = divmod(seconds, 60)
+    days, remainder = divmod(seconds, 86400)
+    hours, remainder = divmod(remainder, 3600)
+    minutes, seconds = divmod(remainder, 60)
 
-    # Підбір слова "день" в залежності від кількості днів
-    day_word = "днів" if days != 1 else "день"
+    # Вибираємо правильний варіант слова "день"
+    if days == 1:
+        days_str = 'день'
+    elif 1 < days < 5:
+        days_str = 'дні'
+    else:
+        days_str = 'днів'
 
-    # Форматування результату з додаванням провідних нулів
-    result = "{:02} днів {:02}:{:02}:{:02}".format(int(days), int(hours), int(minutes), int(seconds))
-    return result
+    return f"{days} {days_str}, {hours:02}:{minutes:02}:{seconds:02}"
 
 
-# Зчитування введеного користувачем числа секунд
+# Перевірка введених даних та виведення результату
 while True:
     try:
-        user_input = int(input("Введіть кількість секунд (більше або дорівнює 0 і менше ніж 8640000): "))
-        if 0 <= user_input < 8640000:
+        seconds = int(input("Введіть кількість секунд (більше 0 і менше 8640000): "))
+        if 0 <= seconds < 8640000:
+            print(format_time(seconds))
             break
         else:
-            print("Будь ласка, введіть число в межах вказаного діапазону.")
+            print("Неправильне введення. Спробуйте ще раз.")
     except ValueError:
-        print("Будь ласка, введіть ціле число.")
-
-# Форматування та виведення результату
-formatted_time = format_time(user_input)
-print("Час у читабельному форматі:", formatted_time)
+        print("Неправильне введення. Введіть ціле число.")
