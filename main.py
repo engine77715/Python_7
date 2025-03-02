@@ -15,4 +15,5 @@ ping = st.results.ping
 print(down_speed + 'mb/s')
 print(up_speed + 'mb/s')
 print(ping)
+print(ping)
 
